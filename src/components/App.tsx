@@ -1,15 +1,10 @@
-// src/components/App.tsx
 
-import Product from './Product';
+import css from './App.module.css';
 
 export default function App() {
   return (
-    <>
-      <h1>Best selling</h1>
-
-      <Product />
-      <Product />
-      <Product />
-    </>
+    <div className={css.app}>
+      <h1 className={css.title}>카페 정보</h1>
+    </div>
   );
 }
