@@ -1,10 +1,18 @@
 
 import css from './App.module.css';
+import CafeInfo from '../CafeInfo/CafeInfo';
+
 
 export default function App() {
   return (
     <div className={css.app}>
-      <h1 className={css.title}>카페 정보</h1>
+      <CafeInfo
+        title="Sip Happens Café"
+        description="Please rate our service by selecting one of the options below."
+      />
+      
     </div>
+    
   );
+   
 }
