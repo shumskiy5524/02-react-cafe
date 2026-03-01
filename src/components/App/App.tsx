@@ -1,7 +1,6 @@
 
 import { useState } from "react";
 import css from "./App.module.css";
-
 import CafeInfo from "../CafeInfo/CafeInfo";
 import VoteOptions from "../VoteOptions/VoteOptions";
 import VoteStats from "../VoteStats/VoteStats";
@@ -10,14 +9,11 @@ import Notification from "../Notification/Notification";
 import type { Votes, VoteType } from "../../types/votes";
 
 export default function App() {
-  // ✅ state
   const [votes, setVotes] = useState<Votes>({
     good: 0,
     neutral: 0,
     bad: 0,
   });
-
-  // ✅ додати голос
   const handleVote = (type: VoteType) => {
     setVotes(prev => ({
       ...prev,
@@ -25,7 +21,6 @@ export default function App() {
     }));
   };
 
-  // ✅ reset
   const resetVotes = () => {
     setVotes({
       good: 0,
@@ -34,7 +29,7 @@ export default function App() {
     });
   };
 
-  // ✅ обчислення
+ 
   const totalVotes = votes.good + votes.neutral + votes.bad;
 
   const positiveRate = totalVotes
@@ -43,10 +38,7 @@ export default function App() {
 
   return (
     <div className={css.app}>
-      <CafeInfo
-        title="Sip Happens Café"
-        description="Please rate our service by selecting one of the options below."
-      />
+      <CafeInfo />
 
       <VoteOptions
         onVote={handleVote}
