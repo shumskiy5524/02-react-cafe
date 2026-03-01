@@ -10,6 +10,7 @@ interface VoteOptionsProps {
 export default function VoteOptions({
   onVote,
   onReset,
+  canReset,
 }: VoteOptionsProps) {
   return (
     <div className={css.container}>
@@ -34,12 +35,14 @@ export default function VoteOptions({
         Bad
       </button>
 
-      <button
-        className={`${css.button} ${css.reset}`}
-        onClick={onReset}
-      >
-        Reset
-      </button>
+      {canReset && (
+        <button
+          className={`${css.button} ${css.reset}`}
+          onClick={onReset}
+        >
+          Reset
+        </button>
+      )}
     </div>
   );
 }
